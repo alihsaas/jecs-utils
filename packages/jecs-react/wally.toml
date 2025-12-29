@@ -1,0 +1,17 @@
+[package]
+name = "pepeeltoro41/jecs-react"
+version = "1.0.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+exclude = [
+    "node_modules",
+    "src/index.d.ts",
+    "package.json",
+    "jecs.luau",
+    "react.luau",
+]
+
+[dependencies]
+jecs = "ukendio/jecs@^0.9.0"
+react = "jsdotlua/react@^17.2.1"
+jecs-utils = "pepeeltoro41/jecs-utils@^1.2.1"

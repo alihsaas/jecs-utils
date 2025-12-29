@@ -6,7 +6,8 @@
       "node_modules/jecs-gizmo",
       "node_modules/jecs-spring",
       "node_modules/jecs-utils",
-      "node_modules/jecs-vide"
+      "node_modules/jecs-vide",
+      "node_modules/jecs-react"
    ],
    "emitLegacyScripts": false,
    "tree": {
@@ -17,6 +18,9 @@
             "$className": "Folder",
             "vide": {
                "$path": "node_modules/@rbxts/vide"
+            },
+            "react": {
+               "$path": "node_modules/@rbxts/react"
             },
             "jecs": {
                "$path": "node_modules/@rbxts/jecs"
@@ -46,6 +50,13 @@
                "jecs-utils": { "$path": "packages/jecs-vide/jecs-utils.luau" },
                "jecs": { "$path": "packages/jecs-vide/jecs.luau" },
                "vide": { "$path": "packages/jecs-vide/vide.luau" }
+            },
+            "jecs-react": {
+               "$className": "Folder",
+               "src": { "$path": "packages/jecs-react/src" },
+               "jecs-utils": { "$path": "packages/jecs-react/jecs-utils.luau" },
+               "jecs": { "$path": "packages/jecs-react/jecs.luau" },
+               "react": { "$path": "packages/jecs-react/react.luau" }
             },
             "jecs-utils": {
                "$className": "Folder",

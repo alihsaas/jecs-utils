@@ -1,0 +1,33 @@
+{
+	"name": "@rbxts/jecs-react",
+	"version": "1.0.0",
+	"description": "Utilities for using Jecs with React.",
+	"license": "MIT",
+	"main": "src/init.luau",
+	"types": "src/index.d.ts",
+	"files": [
+		"src",
+		"*.luau",
+		"!wally.toml",
+		"!wally.lock",
+		"!default.project.json"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PepeElToro41/jecs-utils.git"
+	},
+	"scripts": {
+		"prepare": "cp ../../LICENSE.md .",
+		"publish:wally": "pnpm run prepare && wally publish"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@rbxts/jecs": "*",
+		"@rbxts/jecs-utils": "*"
+	},
+	"peerDependencies": {
+		"@rbxts/react": "*"
+	}
+}
