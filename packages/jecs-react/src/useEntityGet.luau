@@ -5,8 +5,8 @@ local useWorld = require(script.Parent.useWorld).useWorld
 local useState = react.useState;
 local useEffect = react.useEffect;
 
-function getComponent<T>(entity: jecs.Entity?, id: jecs.Entity<T>): T?
-	return if entity then useWorld():get(entity, id) else nil
+function getComponent<T>(world: jecs.World, entity: jecs.Entity?, id: jecs.Entity<T>): T?
+	return if entity then world:get(entity, id) else nil
 end
 
 function useEntityGet<T>(entity: jecs.Entity?, id: jecs.Entity<T>, deps: { any }?): () -> T?
@@ -15,18 +15,18 @@ function useEntityGet<T>(entity: jecs.Entity?, id: jecs.Entity<T>, deps: { any }
 	local world = useWorld()
 
 	useEffect(function()
-		setOutput(getComponent(entity, id))
+		setOutput(getComponent(world, entity, id))
 		local component = jecs.IS_PAIR(id) and jecs.pair_first(world, id) or id
 		local second = jecs.IS_PAIR(id) and jecs.pair_second(world, id) or nil
 
 		local addedDisconnect = world:added(component, function(e, _, value)
 			if e == entity then
-				setOutput(getComponent(entity, id))
+				setOutput(getComponent(world, entity, id))
 			end
 		end)
 		local changedDisconnect = world:changed(component, function(e, _, value)
 			if e == entity then
-				setOutput(getComponent(entity, id))
+				setOutput(getComponent(world, entity, id))
 			end
 		end)
 		local removedDisconnect = world:removed(component, function(e, removed)

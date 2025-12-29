@@ -1,6 +1,5 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local jecs_utils = require(ReplicatedStorage["jecs-utils"]["jecs-react"]["jecs-utils"])
 local react = require(script.Parent.Parent.react)
+local jecsUtils = require(script.Parent.Parent["jecs-utils"])
 local jecs = require(script.Parent.Parent.jecs)
 
 local WorldContext = react.createContext(nil)
@@ -8,7 +7,7 @@ local WorldContext = react.createContext(nil)
 local function WorldProvider(props)
     local world = props.world
     assert(world, "WorldProvider requires a 'world' prop (initialized Jecs world)")
-    jecs_utils.world(world)
+    jecsUtils.world(world)
     return react.createElement(WorldContext.Provider, {
         value = world
     }, props.children)
