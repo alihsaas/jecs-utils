@@ -62,6 +62,12 @@
                "$className": "Folder",
                "src": { "$path": "packages/jecs-utils/src" },
                "jecs": { "$path": "packages/jecs-utils/jecs.luau" }
+            },
+            "jecs-tween": {
+               "$className": "Folder",
+               "src": { "$path": "packages/jecs-tween/src" },
+               "jecs": { "$path": "packages/jecs-tween/jecs.luau" },
+               "ripple": { "$path": "packages/jecs-tween/ripple.luau" }
             }
          }
       }
