@@ -18,7 +18,6 @@
 		"typescript": "^5.4.2",
 		"@rbxts/ripple": "^0.10.0-alpha.3",
 		"@rbxts/vide": "*",
-		"@rbxts/react": "*",
 		"@rbxts/jecs": "*"
 	}
 }
